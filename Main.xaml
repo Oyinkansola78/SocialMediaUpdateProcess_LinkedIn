@@ -1,0 +1,325 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_mediaId" Type="InArgument(x:String)" />
+    <x:Property Name="in_Text" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>934,5625</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="788,5560" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
+      <Variable x:TypeArguments="x:String" Name="UpdateFilePath" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_UpdateFile" />
+      <Variable x:TypeArguments="x:String" Name="mediaPath" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="726,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InitAllSettings.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings","Constants"}]</InArgument>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <Assign DisplayName="Assign- Excel file to pull updates" sap:VirtualizedContainerService.HintSize="726,81" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[UpdateFilePath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[Config("UpdateFilePath").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_UpdateFile]" DisplayName="Read Range Workbook- Update file" sap:VirtualizedContainerService.HintSize="726,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[UpdateFilePath]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_UpdateFile]" DisplayName="For Each Row in Data Table- UpdateFile Datatable" sap:VirtualizedContainerService.HintSize="726,5047" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="692,4931" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[currentRow.Item(&quot;Date&quot;).ToString = System.DateTime.Now.ToString(&quot;dd.MMM.yyyy&quot;)]" DisplayName="If- Read date " sap:VirtualizedContainerService.HintSize="630,4820" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="500,3823" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="acessToken" />
+                    <Variable x:TypeArguments="x:String" Name="ImageIdBody" />
+                    <Variable x:TypeArguments="x:String" Name="response" />
+                    <Variable x:TypeArguments="x:String" Name="imageID" />
+                    <Variable x:TypeArguments="x:String" Name="Endpoint" />
+                    <Variable x:TypeArguments="x:String" Name="response2" />
+                    <Variable x:TypeArguments="x:String" Name="postBody" />
+                    <Variable x:TypeArguments="x:String" Name="response3" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="438,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Equal" />
+                  <Assign DisplayName="Assign- Access Token" sap:VirtualizedContainerService.HintSize="438,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[acessToken]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">AQUO8oixHTyDqYF14bXUDIZs4V4GSzG2jbafej-TRqdG411WmxO3dPwSgIZywO2et9LqFwuaV7rq2gajDLqtkHBs1xWwXYDHy3mX0wj_c9ADJ2bEaMrG56fdDtjgAM0AH5W-pWYrahwMEVfVivooyBm95DoPEEd5W5rR9ZLTAuJBdqJq-8KkVW2PkDcCvP0WvTsKCcyM82i-8TBEK5N0mIb9DGxWnJkDdn04U9WWkNc7bfGYizSW8Tn95nZw-ZKN3Dxby1dmGhNMYzI6RUUhH8XkgP-HbvvsY7MxLP8zDaXjwWYa9qLaUEY8IiHQIy_uGo6o8q0mfHOAr8dV-tDgbC25-W5jOg</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:ReadTextFile File="{x:Null}" Content="[ImageIdBody]" DisplayName="Read Text File- ImageId body" FileName="Data\Input\ImageID.json" sap:VirtualizedContainerService.HintSize="438,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+                  <TryCatch DisplayName="Try Catch- Generate Upload Endpoint" sap:VirtualizedContainerService.HintSize="438,298" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <TryCatch.Try>
+                      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[ImageIdBody]" BodyFormat="application/json" DisplayName="HTTP Request- Generate Upload Endpoint" EnableSSLVerification="True" EndPoint="https://api.linkedin.com/rest/images?action=initializeUpload" sap:VirtualizedContainerService.HintSize="204,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" OAuth2Token="[acessToken]" Result="[response]" TimeoutMS="6000">
+                        <ui:HttpClient.Attachments>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.Attachments>
+                        <ui:HttpClient.Cookies>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.Cookies>
+                        <ui:HttpClient.Headers>
+                          <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">202304</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">Bearer AQUO8oixHTyDqYF14bXUDIZs4V4GSzG2jbafej-TRqdG411WmxO3dPwSgIZywO2et9LqFwuaV7rq2gajDLqtkHBs1xWwXYDHy3mX0wj_c9ADJ2bEaMrG56fdDtjgAM0AH5W-pWYrahwMEVfVivooyBm95DoPEEd5W5rR9ZLTAuJBdqJq-8KkVW2PkDcCvP0WvTsKCcyM82i-8TBEK5N0mIb9DGxWnJkDdn04U9WWkNc7bfGYizSW8Tn95nZw-ZKN3Dxby1dmGhNMYzI6RUUhH8XkgP-HbvvsY7MxLP8zDaXjwWYa9qLaUEY8IiHQIy_uGo6o8q0mfHOAr8dV-tDgbC25-W5jOg</InArgument>
+                        </ui:HttpClient.Headers>
+                        <ui:HttpClient.Parameters>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.Parameters>
+                        <ui:HttpClient.UrlSegments>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.UrlSegments>
+                      </ui:HttpClient>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[exception.Message]" />
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[response]" />
+                  <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Image ID" FullText="[response]" sap:VirtualizedContainerService.HintSize="438,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_1" Separator=":image:" SeparatorKey="Custom" TextToRight="[imageID]" />
+                  <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Image ID" FullText="[imageID]" sap:VirtualizedContainerService.HintSize="438,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_2" Separator="[Chr(34)]" SeparatorKey="Custom" TextToLeft="[imageID]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[imageID]" />
+                  <Assign DisplayName="Assign- Image ID " sap:VirtualizedContainerService.HintSize="438,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[in_mediaId]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[imageID]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right- Extract Upload Endpoint" FullText="[response]" sap:VirtualizedContainerService.HintSize="438,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_3" Separator="[&quot;uploadUrl&quot; + Chr(34) + &quot;:&quot; + Chr(34)]" SeparatorKey="Custom" TextToRight="[Endpoint]" />
+                  <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right- Format Upload Endpoint" FullText="[Endpoint]" sap:VirtualizedContainerService.HintSize="438,272" sap2010:WorkflowViewState.IdRef="TextToLeftRight_4" Separator="[Chr(34) + &quot;,&quot; + Chr(34) + &quot;image&quot; + Chr(34)]" SeparatorKey="Custom" TextToLeft="[Endpoint]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[Endpoint]" />
+                  <Assign DisplayName="Assign- Media Path" sap:VirtualizedContainerService.HintSize="438,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[mediaPath]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[currentRow.Item("Path to media").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <TryCatch DisplayName="Try Catch- Upload Image" sap:VirtualizedContainerService.HintSize="438,298" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch.Try>
+                      <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/binary" DisplayName="HTTP Request- Upload Image" EnableSSLVerification="True" EndPoint="[Endpoint]" sap:VirtualizedContainerService.HintSize="204,70" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="PUT" OAuth2Token="[acessToken]" Result="[response2]" TimeoutMS="6000">
+                        <ui:HttpClient.Attachments>
+                          <InArgument x:TypeArguments="x:String" x:Key="file">[mediaPath]</InArgument>
+                        </ui:HttpClient.Attachments>
+                        <ui:HttpClient.Cookies>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.Cookies>
+                        <ui:HttpClient.Headers>
+                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">Bearer AQUO8oixHTyDqYF14bXUDIZs4V4GSzG2jbafej-TRqdG411WmxO3dPwSgIZywO2et9LqFwuaV7rq2gajDLqtkHBs1xWwXYDHy3mX0wj_c9ADJ2bEaMrG56fdDtjgAM0AH5W-pWYrahwMEVfVivooyBm95DoPEEd5W5rR9ZLTAuJBdqJq-8KkVW2PkDcCvP0WvTsKCcyM82i-8TBEK5N0mIb9DGxWnJkDdn04U9WWkNc7bfGYizSW8Tn95nZw-ZKN3Dxby1dmGhNMYzI6RUUhH8XkgP-HbvvsY7MxLP8zDaXjwWYa9qLaUEY8IiHQIy_uGo6o8q0mfHOAr8dV-tDgbC25-W5jOg</InArgument>
+                        </ui:HttpClient.Headers>
+                        <ui:HttpClient.Parameters>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.Parameters>
+                        <ui:HttpClient.UrlSegments>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.UrlSegments>
+                      </ui:HttpClient>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[exception.Message]" />
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[response2]" />
+                  <ui:ReadTextFile File="{x:Null}" Content="[postBody]" DisplayName="Read Text File- Post Request Body" FileName="Data\Input\body.json" sap:VirtualizedContainerService.HintSize="438,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+                  <Assign sap:VirtualizedContainerService.HintSize="438,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[in_Text]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[currentRow.Item("Title").ToString + "- " + currentRow.Item("Description").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <TryCatch DisplayName="Try Catch- Post Update to LinkedIn" sap:VirtualizedContainerService.HintSize="438,298" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <TryCatch.Try>
+                      <ui:HttpClient ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[postBody.Replace(&quot;in_MediaID&quot;, in_mediaId).Replace(&quot;in_Text&quot;, in_Text)]" BodyFormat="application/json" ClientCertificate="781qkrr8e497nh" ClientCertificatePassword="bH47fKfULwWs19uj" DisplayName="HTTP Request- Post Update to LinkedIn" EnableSSLVerification="True" EndPoint="https://api.linkedin.com/rest/posts" sap:VirtualizedContainerService.HintSize="204,70" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="POST" OAuth2Token="[acessToken]" Result="[response3]" TimeoutMS="6000">
+                        <ui:HttpClient.Attachments>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.Attachments>
+                        <ui:HttpClient.Cookies>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.Cookies>
+                        <ui:HttpClient.Headers>
+                          <InArgument x:TypeArguments="x:String" x:Key="LinkedIn-Version">202304</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Authorization">Bearer AQUO8oixHTyDqYF14bXUDIZs4V4GSzG2jbafej-TRqdG411WmxO3dPwSgIZywO2et9LqFwuaV7rq2gajDLqtkHBs1xWwXYDHy3mX0wj_c9ADJ2bEaMrG56fdDtjgAM0AH5W-pWYrahwMEVfVivooyBm95DoPEEd5W5rR9ZLTAuJBdqJq-8KkVW2PkDcCvP0WvTsKCcyM82i-8TBEK5N0mIb9DGxWnJkDdn04U9WWkNc7bfGYizSW8Tn95nZw-ZKN3Dxby1dmGhNMYzI6RUUhH8XkgP-HbvvsY7MxLP8zDaXjwWYa9qLaUEY8IiHQIy_uGo6o8q0mfHOAr8dV-tDgbC25-W5jOg</InArgument>
+                        </ui:HttpClient.Headers>
+                        <ui:HttpClient.Parameters>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.Parameters>
+                        <ui:HttpClient.UrlSegments>
+                          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                        </ui:HttpClient.UrlSegments>
+                      </ui:HttpClient>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[exception.Message]" />
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[response3]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+  </Sequence>
+</Activity>

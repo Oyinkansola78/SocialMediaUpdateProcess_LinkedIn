@@ -1,0 +1,95 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "UpdateFilePath&Sequence_1",
+        "dt_UpdateFile&Sequence_1",
+        "mediaPath&Sequence_1",
+        "acessToken&Sequence_4",
+        "ImageIdBody&Sequence_4",
+        "response&Sequence_4",
+        "imageID&Sequence_4",
+        "Endpoint&Sequence_4",
+        "response2&Sequence_4",
+        "postBody&Sequence_4",
+        "response3&Sequence_4",
+        "dt_SettingsAndConstants&",
+        "dt_Assets&",
+        "AssetValue&"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Text",
+        "in_mediaId"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "CreateImageID.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrBytes&Sequence_1",
+        "mediaPath&Sequence_1",
+        "imageID&Sequence_1",
+        "testt&Sequence_1",
+        "testEndpoint&Sequence_1",
+        "variable1&Sequence_1",
+        "body&Sequence_1",
+        "acessToken&Sequence_1",
+        "responsee&Sequence_1",
+        "newEndpoint&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_mediaId"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "CreateMediaId.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "in_mediaId&Sequence_1",
+        "mediaPath&Sequence_1",
+        "response3&Sequence_1",
+        "postBody&Sequence_1",
+        "response2&Sequence_1",
+        "imageIdBody&Sequence_1",
+        "Endpoint&Sequence_1",
+        "imageID&Sequence_1",
+        "response&Sequence_1",
+        "acessToken&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    }
+  ]
+}

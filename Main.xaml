@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="in_mediaId" Type="InArgument(x:String)" />
     <x:Property Name="in_Text" Type="InArgument(x:String)" />
+    <x:Property Name="in_orgId" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,5625</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>934,4941</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,13 +79,13 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Web</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="788,5560" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="694,4876" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="x:String" Name="UpdateFilePath" />
@@ -96,14 +97,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="726,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InitAllSettings.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="632,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InitAllSettings.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
         <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings","Constants"}]</InArgument>
         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Assign DisplayName="Assign- Excel file to pull updates" sap:VirtualizedContainerService.HintSize="726,81" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign- Excel file to pull updates" sap:VirtualizedContainerService.HintSize="632,82" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[UpdateFilePath]</OutArgument>
       </Assign.To>
@@ -111,20 +112,20 @@
         <InArgument x:TypeArguments="x:String">[Config("UpdateFilePath").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_UpdateFile]" DisplayName="Read Range Workbook- Update file" sap:VirtualizedContainerService.HintSize="726,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[UpdateFilePath]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_UpdateFile]" DisplayName="For Each Row in Data Table- UpdateFile Datatable" sap:VirtualizedContainerService.HintSize="726,5047" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_UpdateFile]" DisplayName="Read Range Workbook- Update file" sap:VirtualizedContainerService.HintSize="632,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[UpdateFilePath]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_UpdateFile]" DisplayName="For Each Row in Data Table- UpdateFile Datatable" sap:VirtualizedContainerService.HintSize="632,4362" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="692,4931" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="598,4245" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[currentRow.Item(&quot;Date&quot;).ToString = System.DateTime.Now.ToString(&quot;dd.MMM.yyyy&quot;)]" DisplayName="If- Read date " sap:VirtualizedContainerService.HintSize="630,4820" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[currentRow.Item(&quot;Date&quot;).ToString = System.DateTime.Now.ToString(&quot;dd.MMM.yyyy&quot;)]" DisplayName="If- Read date " sap:VirtualizedContainerService.HintSize="536,4134" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,7 +133,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="500,3823" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="500,3945" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="acessToken" />
                     <Variable x:TypeArguments="x:String" Name="ImageIdBody" />
@@ -157,10 +158,18 @@
                       <InArgument x:TypeArguments="x:String">AQUO8oixHTyDqYF14bXUDIZs4V4GSzG2jbafej-TRqdG411WmxO3dPwSgIZywO2et9LqFwuaV7rq2gajDLqtkHBs1xWwXYDHy3mX0wj_c9ADJ2bEaMrG56fdDtjgAM0AH5W-pWYrahwMEVfVivooyBm95DoPEEd5W5rR9ZLTAuJBdqJq-8KkVW2PkDcCvP0WvTsKCcyM82i-8TBEK5N0mIb9DGxWnJkDdn04U9WWkNc7bfGYizSW8Tn95nZw-ZKN3Dxby1dmGhNMYzI6RUUhH8XkgP-HbvvsY7MxLP8zDaXjwWYa9qLaUEY8IiHQIy_uGo6o8q0mfHOAr8dV-tDgbC25-W5jOg</InArgument>
                     </Assign.Value>
                   </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="438,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[in_orgId]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">ZYi0Uzm4pM</InArgument>
+                    </Assign.Value>
+                  </Assign>
                   <ui:ReadTextFile File="{x:Null}" Content="[ImageIdBody]" DisplayName="Read Text File- ImageId body" FileName="Data\Input\ImageID.json" sap:VirtualizedContainerService.HintSize="438,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
                   <TryCatch DisplayName="Try Catch- Generate Upload Endpoint" sap:VirtualizedContainerService.HintSize="438,298" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                     <TryCatch.Try>
-                      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[ImageIdBody]" BodyFormat="application/json" DisplayName="HTTP Request- Generate Upload Endpoint" EnableSSLVerification="True" EndPoint="https://api.linkedin.com/rest/images?action=initializeUpload" sap:VirtualizedContainerService.HintSize="204,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" OAuth2Token="[acessToken]" Result="[response]" TimeoutMS="6000">
+                      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[ImageIdBody.Replace(&quot;Org_Id&quot;, in_orgId)]" BodyFormat="application/json" DisplayName="HTTP Request- Generate Upload Endpoint" EnableSSLVerification="True" EndPoint="https://api.linkedin.com/rest/images?action=initializeUpload" sap:VirtualizedContainerService.HintSize="204,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" OAuth2Token="[acessToken]" Result="[response]" TimeoutMS="6000">
                         <ui:HttpClient.Attachments>
                           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                         </ui:HttpClient.Attachments>
@@ -268,7 +277,7 @@
                   </Assign>
                   <TryCatch DisplayName="Try Catch- Post Update to LinkedIn" sap:VirtualizedContainerService.HintSize="438,298" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                     <TryCatch.Try>
-                      <ui:HttpClient ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[postBody.Replace(&quot;in_MediaID&quot;, in_mediaId).Replace(&quot;in_Text&quot;, in_Text)]" BodyFormat="application/json" ClientCertificate="781qkrr8e497nh" ClientCertificatePassword="bH47fKfULwWs19uj" DisplayName="HTTP Request- Post Update to LinkedIn" EnableSSLVerification="True" EndPoint="https://api.linkedin.com/rest/posts" sap:VirtualizedContainerService.HintSize="204,70" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="POST" OAuth2Token="[acessToken]" Result="[response3]" TimeoutMS="6000">
+                      <ui:HttpClient ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[postBody.Replace(&quot;in_MediaID&quot;, in_mediaId).Replace(&quot;in_Text&quot;, in_Text).Replace(&quot;Org_Id&quot;, in_orgId)]" BodyFormat="application/json" ClientCertificate="781qkrr8e497nh" ClientCertificatePassword="bH47fKfULwWs19uj" DisplayName="HTTP Request- Post Update to LinkedIn" EnableSSLVerification="True" EndPoint="https://api.linkedin.com/rest/posts" sap:VirtualizedContainerService.HintSize="204,70" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="POST" OAuth2Token="[acessToken]" Result="[response3]" TimeoutMS="6000">
                         <ui:HttpClient.Attachments>
                           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                         </ui:HttpClient.Attachments>
